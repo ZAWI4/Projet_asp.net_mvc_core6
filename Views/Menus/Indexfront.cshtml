@@ -1,0 +1,175 @@
+﻿@model IEnumerable<Projet_asp.Models.Menu>
+
+
+@{
+    ViewData["Title"] = "Indexfront";
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown"><span>Menu</span></h2>
+                            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!-- End Hero -->
+<!--
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prix)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prix)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>
+
+-->
+
+<!-- ======= Menu Section ======= -->
+<section id="menu" class="menu">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Check our tasty <span>Menu</span></h2>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="menu-flters">
+                    <li data-filter="*" class="filter-active">Show All</li>
+                    @foreach (var item in Model) {
+                        
+                        <li data-filter=".filter-@Html.DisplayFor(modelItem => item.nom)" class="filter-active">@Html.DisplayFor(modelItem => item.nom)</li>
+                    
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="row menu-container">
+            @foreach (var item in Model) {
+            <div class="col-lg-6 menu-item filter-starters">
+                <div class="menu-content">
+                        <a href="#">Lobster Bisque</a><span>@Html.DisplayFor(modelItem => item.prix)</span>
+                </div>
+                <div class="menu-ingredients">
+                    Lorem, deren, trataro, filede, nerada
+                </div>
+            </div>
+            }
+            <div class="col-lg-6 menu-item filter-specialty">
+                <div class="menu-content">
+                    <a href="#">Bread barrel</a><span>$6.95</span>
+                </div>
+                <div class="menu-ingredients">
+                    Lorem, deren, trataro, filede, nerada
+                </div>
+            </div>
+
+            <div class="col-lg-6 menu-item filter-starters">
+                <div class="menu-content">
+                    <a href="#">Crab Cake</a><span>$7.95</span>
+                </div>
+                <div class="menu-ingredients">
+                    A delicate crab cake served on a toasted roll with lettuce and tartar sauce
+                </div>
+            </div>
+
+            <div class="col-lg-6 menu-item filter-salads">
+                <div class="menu-content">
+                    <a href="#">Caesar Selections</a><span>$8.95</span>
+                </div>
+                <div class="menu-ingredients">
+                    Lorem, deren, trataro, filede, nerada
+                </div>
+            </div>
+
+            <div class="col-lg-6 menu-item filter-specialty">
+                <div class="menu-content">
+                    <a href="#">Tuscan Grilled</a><span>$9.95</span>
+                </div>
+                <div class="menu-ingredients">
+                    Grilled chicken with provolone, artichoke hearts, and roasted red pesto
+                </div>
+            </div>
+
+            <div class="col-lg-6 menu-item filter-starters">
+                <div class="menu-content">
+                    <a href="#">Mozzarella Stick</a><span>$4.95</span>
+                </div>
+                <div class="menu-ingredients">
+                    Lorem, deren, trataro, filede, nerada
+                </div>
+            </div>
+
+            <div class="col-lg-6 menu-item filter-salads">
+                <div class="menu-content">
+                    <a href="#">Greek Salad</a><span>$9.95</span>
+                </div>
+                <div class="menu-ingredients">
+                    Fresh spinach, crisp romaine, tomatoes, and Greek olives
+                </div>
+            </div>
+
+            <div class="col-lg-6 menu-item filter-salads">
+                <div class="menu-content">
+                    <a href="#">Spinach Salad</a><span>$9.95</span>
+                </div>
+                <div class="menu-ingredients">
+                    Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
+                </div>
+            </div>
+
+            <div class="col-lg-6 menu-item filter-specialty">
+                <div class="menu-content">
+                    <a href="#">Lobster Roll</a><span>$12.95</span>
+                </div>
+                <div class="menu-ingredients">
+                    Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Menu Section -->

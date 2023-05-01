@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Projet_asp.Models.Chef>
+
+@{
+    ViewData["Title"] = "";
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown"><span>OUR CHEFS</span></h2>
+                            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!-- End Hero -->
+
+
+<!--<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prenom)
+            </th>
+           >
+            <th>
+                @Html.DisplayNameFor(model => model.specialite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prenom)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.specialite)
+            </td>
+                <td>
+                    <img src="~/PIC/chefs/@item.Photo" style="width:150px;height:150px;">
+                </td>
+            
+        </tr>
+}
+    </tbody>
+</table>-->
+
+<!-- ======= Chefs Section ======= -->
+<section id="chefs" class="chefs">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our Proffesional <span>Chefs</span></h2>
+            <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        </div>
+
+        <div class="row">
+            @foreach (var item in Model){
+
+            <div class="col-lg-4 col-md-6">
+                <div class="member">
+                        <div class="pic"><img src="~/PIC/chefs/@item.Photo" class="img-fluid" ></div>
+                    <div class="member-info">
+                            <h4>@Html.DisplayFor(modelItem => item.nom)</h4>
+                        <span>Master Chef</span>
+                        <div class="social">
+                            <a href=""><i class="bi bi-twitter"></i></a>
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            }
+        
+
+    </div>
+</section><!-- End Chefs Section -->

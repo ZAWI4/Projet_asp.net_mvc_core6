@@ -1,0 +1,66 @@
+﻿@model Projet_asp.Models.Reservation
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Reservation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nom_client" class="control-label"></label>
+                <input asp-for="Nom_client" class="form-control" />
+                <span asp-validation-for="Nom_client" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prenom_client" class="control-label"></label>
+                <input asp-for="prenom_client" class="form-control" />
+                <span asp-validation-for="prenom_client" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tel_client" class="control-label"></label>
+                <input asp-for="tel_client" class="form-control" />
+                <span asp-validation-for="tel_client" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email_client" class="control-label"></label>
+                <input asp-for="email_client" class="form-control" />
+                <span asp-validation-for="email_client" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Heure" class="control-label"></label>
+                <input asp-for="Heure" class="form-control" />
+                <span asp-validation-for="Heure" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nombre_de_personne" class="control-label"></label>
+                <input asp-for="nombre_de_personne" class="form-control" />
+                <span asp-validation-for="nombre_de_personne" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Message" class="control-label"></label>
+                <input asp-for="Message" class="form-control" />
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,91 @@
+﻿@model Projet_asp.Models.Reservation
+
+
+@{
+    ViewData["Title"] = "CreateFront";
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown"><span>RESERVATION</span></h2>
+                            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!-- End Hero -->
+
+<div class="row" style="margin-left: 300px; margin-top:20px;">
+    <div class="col-md-4">
+        <form asp-action="CreateFront" name="Form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="margin-top:10px; margin-bottom:20px;">
+                
+                
+                <input asp-for="Nom_client" class="form-control" placeholder="Nom"  name="name"  required/>
+               
+            </div>
+            <div class="form-group" style="margin-top:10px; margin-bottom:20px;">
+                
+                <input asp-for="prenom_client" class="form-control" placeholder="prenom" name="prenom" required />
+            </div>
+            <div class="form-group" style="margin-top:10px; margin-bottom:20px;">
+                
+                <input asp-for="tel_client" class="form-control" type="tel" placeholder="telephone" required />
+               
+            </div>
+            <div class="form-group" style="margin-top:10px; margin-bottom:20px;">
+                
+                <input asp-for="email_client" class="form-control" placeholder="email" id="email" name="email" required />
+                
+            </div>
+            <div class="form-group" style="margin-top:10px; margin-bottom:20px;">
+                
+                <input asp-for="Date" class="form-control" placeholder="Date de reservation" id="subject" name="subject" required />
+                
+            </div>
+            <div class="form-group" style="margin-top:10px; margin-bottom:20px;">
+                
+                <input asp-for="Heure" class="form-control" placeholder="Heure de reservation" required />
+                
+            </div>
+            <div class="form-group" style="margin-top:10px; margin-bottom:20px;">
+                <label asp-for="nombre_de_personne" class="control-label"></label>
+                <input asp-for="nombre_de_personne" class="form-control" placeholder="nombre de personne" required />
+               
+            </div>
+            <div class="form-group" style="margin-top:10px; margin-bottom:20px;">
+                <label asp-for="Message" class="control-label"></label>
+                
+                <textarea asp-for="Message" class="form-control" required> </textarea>
+
+               
+                
+            </div>
+            <div class="form-group" style="margin-top:10px; margin-bottom:20px;">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                
+            </div>
+        </form>
+    </div>
+</div>
+ 
+
